@@ -21,7 +21,7 @@ Instance segmentation combines object detection with pixel-level segmentation, a
 
 ## 📚 Notebooks Overview
 
-### 1. Data Preparation (`1_Download_images_files_and_labels.ipynb`)
+### 1. Data Preparation (`1 Download images files and labels.ipynb`)
 
 This notebook handles the initial data pipeline:
 - **Download and organize image datasets** from various sources
@@ -35,7 +35,7 @@ Key capabilities:
 - Annotation format conversion utilities
 - Data quality validation
 
-### 2. AutoML Training (`2_AutoML_for_Instance_segmentation.ipynb`)
+### 2. AutoML Training (`2 AutoML for Instance segmentation.ipynb`)
 
 The core training notebook that:
 - **Configures Azure ML workspace** and compute resources
@@ -53,7 +53,7 @@ Technical highlights:
 - Comprehensive performance metrics (mAP, IoU, etc.)
 - MLflow experiment tracking
 
-### 3. Model Inference (`3_Instance_segmentation_model_inferencing.ipynb`)
+### 3. Model Inference (`3 Instance segmentation model inferencing.ipynb`)
 
 The deployment and inference notebook featuring:
 - **Online endpoint management** for production deployment
