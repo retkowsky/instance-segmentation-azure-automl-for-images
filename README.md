@@ -88,7 +88,7 @@ Application features:
 
 ### Related Tutorials
 - [Azure ML Examples Repository](https://github.com/Azure/azureml-examples)
-- [Instance Segmentation Best Practices](https://github.com/Azure/azureml-examples/tree/main/sdk/python/jobs/automl-standalone-jobs)
+- [Example](https://github.com/Azure/azureml-examples/tree/main/sdk/python/jobs/automl-standalone-jobs/automl-image-instance-segmentation-task-fridge-items)
 
 
 **Note**: This project requires an active Azure subscription and may incur costs for compute resources and model hosting. Please review [Azure ML pricing](https://azure.microsoft.com/pricing/details/machine-learning/) before deployment.
