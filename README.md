@@ -5,6 +5,10 @@
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
 <img src="img/automlprocess.png">
+<br>
+<br>
+<img src="img/gradio1.jpg">
+
 ## 🎯 Overview
 
 This repository provides a comprehensive end-to-end tutorial for building, training, and deploying instance segmentation models using Azure AutoML for Images. The project demonstrates how to leverage Azure Machine Learning's automated ML capabilities to create computer vision models without extensive manual configuration.
