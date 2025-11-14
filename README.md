@@ -95,5 +95,11 @@ Application features:
 - [Azure ML Examples Repository](https://github.com/Azure/azureml-examples)
 - [Example](https://github.com/Azure/azureml-examples/tree/main/sdk/python/jobs/automl-standalone-jobs/automl-image-instance-segmentation-task-fridge-items)
 
+## 📧 Contact
+Serge Retkowsky
+
+Email: serge.retkowsky@microsoft.com
+LinkedIn: https://www.linkedin.com/in/serger/
+Updated: 14th of november, 2025
 
 **Note**: This project requires an active Azure subscription and may incur costs for compute resources and model hosting. Please review [Azure ML pricing](https://azure.microsoft.com/pricing/details/machine-learning/) before deployment.
