@@ -1,105 +1,125 @@
-# Azure AutoML for Images - Instance Segmentation Tutorial
+# Instance Segmentation with Azure AutoML for Images
 
-[![Azure ML](https://img.shields.io/badge/Azure-Machine%20Learning-blue)](https://azure.microsoft.com/services/machine-learning/)
+[![Azure ML](https://img.shields.io/badge/Azure%20Machine%20Learning-blue)](https://azure.microsoft.com/services/machine-learning/)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-yellow)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
-<img src="img/automlprocess.png">
+<img src="img/automlprocess.png" alt="Azure AutoML for Images workflow" width="800"/>
 <br>
-<br>
-<img src="img/gradio1.jpg">
+<img src="img/gradio1.jpg" alt="Gradio Instance Segmentation Demo" width="800"/>
 
-## 🎯 Overview
+---
 
-This repository provides a comprehensive end-to-end tutorial for building, training, and deploying instance segmentation models using Azure AutoML for Images. The project demonstrates how to leverage Azure Machine Learning's automated ML capabilities to create computer vision models without extensive manual configuration.
+## 🚀 Overview
 
-Instance segmentation combines object detection with pixel-level segmentation, allowing you to identify and precisely outline multiple objects in images. This repository walks through the entire pipeline from data preparation to model deployment with an interactive web interface.
+This repository is a step-by-step, production-grade tutorial for building, training, and deploying **instance segmentation** models using [Azure Machine Learning AutoML for Images](https://learn.microsoft.com/azure/machine-learning/concept-automated-ml#computer-vision-preview). We guide you through the entire process—from dataset preparation to real-time inference via a web application—using Azure’s powerful automation and managed services.
 
-## 🌟 Key Features
+**Instance segmentation** goes beyond object detection by precisely outlining (segmenting) every object in an image at the pixel level.
 
-- **Automated Model Training**: Leverage Azure AutoML to automatically select and optimize the best model architecture
-- **End-to-End Pipeline**: Complete workflow from data download to model deployment
-- **Interactive Web Interface**: Gradio-based application for real-time model inference
-- **Support for Multiple Architectures**: Including Mask R-CNN models
-- **MLflow Integration**: Comprehensive experiment tracking and model versioning
-- **Production-Ready Deployment**: Deploy models as managed online endpoints in Azure
+---
 
-## 📚 Notebooks Overview
+## 🌟 Features
 
-### 1. Data Preparation (`1 Download images files and labels.ipynb`)
+- **One-Click Model Training:** Azure AutoML picks and optimizes the best deep learning architecture automatically.
+- **Complete Pipeline:** All steps included: dataset download, exploratory analysis, splitting, training, validation, deployment, and inference.
+- **Interactive Web UI:** Gradio-based app for fast, user-friendly model evaluation and visual demos.
+- **Supports Top Architectures:** Includes Mask R-CNN and other state-of-the-art models.
+- **MLflow Experiment Tracking:** Easily compare runs, models, and metrics.
+- **Cloud Deployment Ready:** Deploy instantly as a secure managed endpoint on Azure.
 
-This notebook handles the initial data pipeline:
-- **Download and organize image datasets** from various sources
-- **Perform exploratory data analysis** on image properties
-- **Prepare train/validation/test splits** for model training
-- **Visualize data distributions** and sample annotations
+---
 
-Key capabilities:
-- Automated dataset download and extraction
-- Image metadata analysis (dimensions, color modes, file sizes)
-- Annotation format conversion utilities
-- Data quality validation
+## 🗂️ Repository Structure and Notebooks
 
-### 2. AutoML Training (`2 AutoML for Instance segmentation.ipynb`)
+**1. Data Preparation**  
+[`1 Download images files and labels.ipynb`](1%20Download%20images%20files%20and%20labels.ipynb)  
+- Download & organize images and annotations (labels)
+- Exploratory data analysis (EDA)
+- Train/validation/test split automation
+- Utilities for annotation conversion and validation
 
-The core training notebook that:
-- **Configures Azure ML workspace** and compute resources
-- **Creates MLTable data assets** for training and validation
-- **Sets up AutoML experiment** with hyperparameter search spaces
-- **Trains multiple model architectures** (Mask R-CNN)
-- **Evaluates model performance** with various metrics
-- **Registers the best model** in Azure ML Model Registry
-- **Deploys model to managed endpoint** for online inference
+**2. AutoML Model Training**  
+[`2 AutoML for Instance segmentation.ipynb`](2%20AutoML%20for%20Instance%20segmentation.ipynb)  
+- Azure ML workspace setup and compute configuration
+- Build MLTable assets
+- Launch AutoML experiments, tune hyperparameters, try multiple models
+- Evaluate, log, and register the best model
+- Deploy trained model to a managed endpoint
 
-Technical highlights:
-- GPU compute cluster configuration
-- Advanced hyperparameter tuning with Bandit Policy
-- Support for custom model architectures
-- Comprehensive performance metrics (mAP, IoU, etc.)
-- MLflow experiment tracking
+**3. Deployment & Inference**  
+[`3 Instance segmentation model inferencing.ipynb`](3%20Instance%20segmentation%20model%20inferencing.ipynb)  
+- Query your deployed endpoint using REST API
+- Production-ready batch and real-time inference
+- Launch the Gradio app for live demos & testing
+- Analyze and visualize segmentation outputs
 
-### 3. Model Inference (`3 Instance segmentation model inferencing.ipynb`)
+---
 
-The deployment and inference notebook featuring:
-- **Online endpoint management** for production deployment
-- **Real-time model inference** with REST API integration
-- **Interactive Gradio web application** for user-friendly predictions
-- **Batch processing capabilities** for multiple images
-- **Visualization utilities** for segmentation results
-- **Performance optimization** for inference speed
-
-Application features:
-- Adjustable confidence thresholds
-- Support for multiple image formats
-- Real-time segmentation visualization
-- Detailed prediction summaries
-- Example images for quick testing
-
-## 🚀 Getting Started
+## 🏁 Getting Started
 
 ### Prerequisites
 
-- **Azure Subscription** with Machine Learning service enabled
-- **Azure ML Workspace** configured
-- **Python 3.10+** environment
-- **GPU Compute Cluster** (recommended: Standard_NC24ads_A100_v4 or similar)
+- Active **Azure Subscription** with [Azure Machine Learning](https://azure.microsoft.com/services/machine-learning/)
+- **Azure ML Workspace** set up
+- **Python 3.10+**
+- Recommended: Access to a GPU compute cluster (e.g., `Standard_NC24ads_A100_v4`)
 
-## 📖 Documentation & Resources
+### Setup
 
-### Official Documentation
+1. **Clone the Repository**  
+   ```bash
+   git clone https://github.com/retkowsky/instance-segmentation-azure-automl-for-images.git
+   cd instance-segmentation-azure-automl-for-images
+   ```
+
+2. **Install Dependencies**  
+   We recommend using a virtual environment:  
+   ```bash
+   python -m venv .env
+   source .env/bin/activate  # On Windows use `.env\Scripts\activate`
+   pip install -r requirements.txt
+   ```
+
+3. **Configure Azure**  
+   - Create or use an existing Azure ML workspace.
+   - Fill in your Azure credentials in the provided `azure.env` file.
+
+4. **Run Notebooks**  
+   In order (highly recommended):  
+   1. `1 Download images files and labels.ipynb`
+   2. `2 AutoML for Instance segmentation.ipynb`
+   3. `3 Instance segmentation model inferencing.ipynb`
+
+---
+
+## 📚 Resources
+
 - [Azure ML AutoML for Images](https://learn.microsoft.com/azure/machine-learning/concept-automated-ml#computer-vision-preview)
 - [Supported Model Architectures](https://learn.microsoft.com/azure/machine-learning/how-to-auto-train-image-models)
-- [MLflow Integration Guide](https://learn.microsoft.com/azure/machine-learning/how-to-use-mlflow)
+- [Azure MLflow Tracking](https://learn.microsoft.com/azure/machine-learning/how-to-use-mlflow)
+- [Azure ML Example Gallery](https://github.com/Azure/azureml-examples)
+- [Instance Segmentation Example](https://github.com/Azure/azureml-examples/tree/main/sdk/python/jobs/automl-standalone-jobs/automl-image-instance-segmentation-task-fridge-items)
 
-### Related Tutorials
-- [Azure ML Examples Repository](https://github.com/Azure/azureml-examples)
-- [Example](https://github.com/Azure/azureml-examples/tree/main/sdk/python/jobs/automl-standalone-jobs/automl-image-instance-segmentation-task-fridge-items)
+---
 
-## 📧 Contact
-Serge Retkowsky
+## 💻 Screenshots
 
-- Email: serge.retkowsky@microsoft.com
-- LinkedIn: https://www.linkedin.com/in/serger/
-- Updated: 14th of november, 2025
+*(Add example results, images, or GIFs to show inference and web app in action!)*
 
-**Note**: This project requires an active Azure subscription and may incur costs for compute resources and model hosting. Please review [Azure ML pricing](https://azure.microsoft.com/pricing/details/machine-learning/) before deployment.
+---
+
+## ❤️ Contributions
+
+Contributions are welcome! Please open PRs or issues if you improve the notebooks, add datasets, or extend supported architectures.
+
+---
+
+## 📬 Contact
+
+**Serge Retkowsky**  
+- Email: serge.retkowsky@microsoft.com  
+- [LinkedIn](https://www.linkedin.com/in/serger/)  
+- Updated: 14th November 2025
+
+> **Note:**  
+> Usage of this project may incur Azure cloud charges for compute, storage, and endpoints. Review the current [Azure ML pricing](https://azure.microsoft.com/pricing/details/machine-learning/).
